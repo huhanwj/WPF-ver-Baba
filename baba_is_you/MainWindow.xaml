@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:baba_is_you"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Baba Is You" Height="450" Width="800" ResizeMode="CanMinimize" Closed="Window_Closed">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="background.jpg"/>
+        </Grid.Background>
+        <Button x:Name="Start" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Margin="354,281,364.6,115" Height="24" Click="Start_Click"/>
+        <RadioButton x:Name="Normal" Content="RadioButton" HorizontalAlignment="Left" Height="15" Margin="333,315,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="4.818,0.5" GroupName="GameMode" IsChecked="{Binding Path=Normal_Check}" Checked="Normal_Checked"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="358,315,0,0" TextWrapping="Wrap" Text="Normal Mode" VerticalAlignment="Top" Width="98" Foreground="White"/>
+        <RadioButton x:Name="Text" Content="RadioButton" HorizontalAlignment="Left" Height="15" Margin="333,338,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="4.818,0.5" GroupName="GameMode" IsChecked="{Binding Path=Text_Check}" Checked="Text_Checked"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="358,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" Foreground="White" Text="Text Mode"/>
     </Grid>
 </Window>

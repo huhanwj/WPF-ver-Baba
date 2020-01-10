@@ -1,0 +1,13 @@
+﻿<Window x:Class="baba_is_you.Game"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:baba_is_you"
+        mc:Ignorable="d"
+        Title="Baba Is You: Normal Mode" Height="450" Width="570" ResizeMode="CanMinimize" Closed="Window_Closed" KeyDown="OnKeyDown">
+    <Grid Width="570" Height="450">
+        <Canvas x:Name="Presenter" Margin="0" Width="570" Height="450" Background="Black"/>
+
+    </Grid>
+</Window>

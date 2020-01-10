@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +57,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Element.cs" />
+    <Compile Include="Resources\MapData.cs" />
+    <Compile Include="TextMode.xaml.cs">
+      <DependentUpon>TextMode.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,10 +74,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controller\controller.cs" />
+    <Compile Include="Game.xaml.cs">
+      <DependentUpon>Game.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Enum.cs" />
+    <Compile Include="Model\Instance.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TextMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +114,225 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Best.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Best.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Hot.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Is.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Kill.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Melt.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Move.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Push.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Sink.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Slip.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Stop.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Win.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\You.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Baba.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Bone.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\flag.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Grass.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Ice.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Keke.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Lava.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Love.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Rock.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Void.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Wall.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Water.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\BA.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\BO.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\Empty.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\FL.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\Goop.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\GR.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\IC.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\KE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\LA.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\LO.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\RO.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\WA.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Defeat.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Hot.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Is.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Melt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Move.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Push.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Sink.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Stop.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\Win.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\LogicBlock\You.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Baba.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\flag.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Goop.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Grass.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Ice.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Keke.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Lava.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Love.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Rock.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Skull.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\Wall.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\BA.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\Empty.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\FL.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\GO.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\GR.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\IC.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\KE.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\LA.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\LO.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\RO.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\SK.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\ObjectBlock\WA.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\object\BEST.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BabaIsYou.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
